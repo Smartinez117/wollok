@@ -1,0 +1,15 @@
+import example.*
+
+const coleccionFisica = new Fisica()
+const coleccionPython = new Python()
+const coleccionDiscreta = new Discreta()
+
+test "prueba de la coleccion de fisica"{
+  assert.that(coleccionFisica.nuevaCantidad(10)== 75 )
+  }
+test "prueba de coleccion de python"{
+  assert.notThat(coleccionPython.nuevaCantidad(2)== 250)
+  }
+test "prueba de discreta"{
+  	assert.that(coleccionDiscreta.nuevaCantidad(3)>coleccionFisica.nuevaCantidad(5))
+  }

@@ -1,0 +1,16 @@
+import KNY.*
+// declaraciones de personajes
+ const yoriichi = new Cazador (nombre = "yoriichi",respiracion = "Solar",fuerza=1000,velocidad = 1500,habilidades =["marcaDeCazador","HojaCarmesi","mundoTransparente","estadoDesinteresante"])
+ const gyomei = new Cazador (nombre = "gyomei",respiracion = "roca",fuerza=900,velocidad = 930,habilidades =["HojaCarmesi"])
+ const michikatsu = new Demonio (nombre="hermanoEnvidioso",arteDemoniaco = "creacionDEEspadas",nivel=8,fuerza=1500,velocidad = 1000)
+ 
+
+// declaracion de objetos 
+
+test "yoriichi vs michikatsu"{
+ assert.that(yoriichi.fuerzaTotal()>michikatsu.fuerzaTotal())
+}
+test "fuerza de la cofradia"{
+	cofradia.agregarCazadores([yoriichi,gyomei])
+	//assert.that(fuer)
+}

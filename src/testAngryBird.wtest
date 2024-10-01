@@ -1,0 +1,48 @@
+import angryBirds.*
+const pajaro = new Pajaros(ira =20,cantIra=1)
+const red = new Red(cantIra=2,ira=25)
+const bomb = new Bomb(ira= 25,cantIra=1)
+const chuck = new Chuck(velocidad=80,ira=20,cantIra=1)
+const terence = new Terence(multiplicador = 10,ira = 25,cantIra=1)
+const matilda = new Matilda(ira = 15,huevos=0,cantIra=1)
+
+//constantes de los obstaculos
+const paredVidrio = new Vidrio(anchoPared = 5 )
+const paredMadera = new Madera(anchoPared = 10)
+const paredPiedra = new Piedra(anchoPared = 5 )
+
+
+test "fuerza pajaros"{
+	assert.equals(40,pajaro.fuerza()) 
+	assert.equals(500,red.fuerza()) 
+	assert.equals(50,bomb.fuerza())
+	assert.equals(150,chuck.fuerza())
+	assert.equals(260,terence.fuerza())
+	assert.equals(30,matilda.fuerza())
+}
+test "enojar pajaro"{
+	pajaro.enojarse()
+	assert.equals(80,pajaro.fuerza())
+	red.enojarse()
+	assert.equals(750,red.fuerza())
+	bomb.enojarse()
+	assert.equals(100,bomb.fuerza())
+	chuck.enojarse()
+	assert.equals(182,chuck.fuerza())
+	terence.enojarse()
+	assert.equals(520,terence.fuerza())
+	matilda.enojarse()
+	assert.equals(34,matilda.fuerza())
+}
+test " pajaros mas fuertes"{// se toma con mayores a 100 para que sean menos 
+	assert.equals(500+150+260,red.fuerza()+chuck.fuerza()+terence.fuerza())
+}
+
+test "pruebas de paredes "{
+	assert.that(red.fuerza()>paredPiedra.resistencia())
+	assert.that(bomb.fuerza()< paredMadera.resistencia())
+	assert.notThat(bomb.fuerza()>paredPiedra.resistencia())
+}
+
+
+   

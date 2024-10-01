@@ -1,0 +1,15 @@
+import practicaConceptosdef.*
+describe "alumnos" {
+  test "asignarTarea" {
+    tomas.asignarTarea("presentacion1")//declaracion de las funciones a probar 
+    assert.equals(["presentacion1"],tomas.tareas())//primer elemento valor que tiene que igualar
+  }
+  test "cosa"{
+    tomas.asignarTarea("presentacion1")
+    assert.that((tomas.tareas()).size()>0)
+  }
+  test "cosa2"{
+    tomas.asignarTarea("presentacion1")
+    assert.notThat((tomas.tareas()).size()<0)
+  }  
+}

@@ -1,0 +1,78 @@
+import pracparcial.*
+
+ const julieta = new Persona20A40(edad = 42)
+ const ana     = new Atletas (edad = 25)
+ const rosa    = new Atletas (edad = 45,cantidadTecnicas = 8)
+ const monica  = new Docente (edad = 45,cantidadCursos = 6 )
+ const luisa   = new Docente (edad = 35,cantidadCursos = 1 )
+ const perla  = new Atletas (edad = 28,cantidadTecnicas = 4, masaMuscular = 6)
+ const triton = new Planeta (longitudMurallas= 0,museos=0,personas = [julieta,ana,rosa,perla,monica,luisa])
+
+ // test para julieta
+ test "julieta con potencia igual a 20"{
+ assert.equals(20,julieta.potencia())}
+ test "julieta tiene inteligencia igual a 8"{
+ assert.equals(8,julieta.inteligencia())}
+ test "julieta no es destacada"{	
+ assert.notThat(julieta.personaDestacada())}
+
+ // test para ana 
+ test "ana con potencia igual a 28"{
+ 	assert.equals(28,ana.potencia())}
+ test "ana tiene inteligencia igual a 12"{
+ assert.equals(12,ana.inteligencia())}
+ test "ana es destacada"{
+ assert.that(ana.personaDestacada())}
+ // test para rosa 
+  test "rosa con potencia igual a 52"{
+ 	assert.equals(52,rosa.potencia())}
+ test "rosa tiene inteligencia igual a 8"{
+ assert.equals(8,rosa.inteligencia())}
+ test "rosa es destacada"{
+ assert.that(rosa.personaDestacada())}
+ // test para perla 
+ test "perla con potencia igual a 44"{
+ assert.equals(44,perla.potencia())}
+ test "perla tiene inteligencia igual a 12"{
+ assert.equals(12,perla.inteligencia())}
+ test "perla no es destacada"{
+ assert.notThat(perla.personaDestacada())}
+ //test para monica 
+  test "monica con potencia igual a 20"{
+ 	assert.equals(20,monica.potencia())}
+ test "monica  tiene inteligencia igual a 20"{
+ assert.equals(20,monica.inteligencia())}
+ test "monica es destacada"{
+ assert.that(monica.personaDestacada())}
+ // test para luisa
+  test "Luisa con potencia igual a 20"{
+ assert.equals(20,luisa.potencia())}
+ test "Luisa tiene inteligencia igual a 14"{
+ assert.equals(14,luisa.inteligencia())}
+ test "Luisa no es destacada"{
+ assert.notThat(luisa.personaDestacada())}
+
+ // test para triton 
+ test "delegacion diplomatica "{
+ 	assert.equals([ana,rosa,monica], triton.delegacionDiplomatica())
+ }
+ test "no es culto "{
+   	assert.notThat(triton.esCulto())}
+ test "potencia real "{
+ 	assert.equals(184,triton.potenciaReal())
+ }
+ test "primera parte perla"{
+ perla.entrenar(15) 
+ perla.aprenderTecnica()
+ assert.equals(65,perla.potencia()) // funciona pero no son el mismo valor 
+ }
+ test "parte b de perla "{
+  perla.entrenar(15) 
+ perla.aprenderTecnica()
+ assert.notThat(perla.personaDestacada())} 
+ test "segundaPrueba"{
+  perla.entrenar(15) 
+ perla.aprenderTecnica()
+ perla.aprenderTecnica()
+ assert.that(perla.personaDestacada())
+   }

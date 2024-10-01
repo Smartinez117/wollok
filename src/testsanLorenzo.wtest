@@ -1,0 +1,6 @@
+import sanLorenzo.*
+test "testX" {
+
+	assert.that(true)
+
+}
